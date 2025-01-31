@@ -1,0 +1,21 @@
+import random
+import string
+
+#defining character sets, upper and lowercase letters, digits, and random symbols
+def generate_password(length=14):
+    letters = string.ascii_letters
+    numbers = string.digits
+    symbols = "!@#$%&*:;_-+="
+    
+    #combing all characters to make the password more complex 
+    all_chars = letters + numbers + symbols
+    password = ''
+    
+    #for loop to iterate through 14 random characters to create the password
+    for i in range(length):
+        password += random.choice(all_chars)
+    
+    return password
+
+# Generate different length passwords
+print("14-character password:", generate_password())
